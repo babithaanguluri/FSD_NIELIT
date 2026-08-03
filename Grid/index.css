@@ -10,8 +10,22 @@
 .col-10{width: 83.33%;}
 .col-11{width: 91.66%;}
 .col-12{width: 100%;}
-.body{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
     height: 600px;
+}
+
+section{
+    width: 1200px;
+    height: 600px;
+    margin: 20px auto;
 }
 .h-50{
     height: 300px;

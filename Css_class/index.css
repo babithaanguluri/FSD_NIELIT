@@ -1,0 +1,7 @@
+.bg-college-img{
+    background-image: url("./assets/College.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50%;
+    width: 50%;
+}

@@ -1,0 +1,10 @@
+.bg-college-img{
+    background-image: url("./assets/College.webp");
+    background-size: cover;
+    background-repeat: cover;
+    height: 1000px;
+    width: 100%;
+}
+.h1{
+    text-align: center;
+}

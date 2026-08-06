@@ -1,0 +1,61 @@
+.col-1{width: 8.33%;}
+.col-2{width:16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 49.99%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    width:80%;
+    max-width: 1000px;
+    height:600px;
+}
+.h-50{
+    height: 300px;
+}
+.h-30{
+    height: 180px;
+}
+.h-70{
+    height: 420px;
+}
+.h-60{
+    height: 360px;
+}
+.h-40{
+    height: 240px;
+}
+.row{
+    display: flex;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.bg-orange{background-color:peachpuff; border:2px solid black;}
+.bg-violet{background-color:violet; border:2px solid black;}
+.bg-pink{background-color: lightpink; border:2px solid black;}
+.bg-red{background-color: red; border:2px solid black;}
+.bg-yellow{background-color: yellow; border:2px solid black;}
+.bg-blue{background-color: skyblue; border:2px solid black;}
+.bg-brown{background-color: brown; border: 2px solid black;}
+.bg-grey{background-color: grey; border: 2px solid black}
+.bg-aqua{background-color: aquamarine; border: 2px solid black;}

@@ -13,3 +13,8 @@
 ### Task 3 - Background Image
 
 <img width="1811" height="1012" alt="image" src="https://github.com/user-attachments/assets/df78c971-9051-4f98-b575-45993597da1b" />
+
+### Task 4 - Webpage Layout
+
+<img width="1916" height="845" alt="image" src="https://github.com/user-attachments/assets/b2b7643c-1c28-422d-991b-f49c68ec2211" />
+

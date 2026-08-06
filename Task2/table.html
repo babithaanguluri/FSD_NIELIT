@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Details</title>
+</head>
+<body>
+
+<h2>Submitted Data</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Gender</th>
+<th>Country</th>
+</tr>
+
+<tr>
+<td id="f"></td>
+<td id="l"></td>
+<td id="e"></td>
+<td id="p"></td>
+<td id="g"></td>
+<td id="c"></td>
+</tr>
+
+</table>
+
+<script>
+
+document.getElementById("f").innerHTML=localStorage.getItem("fname");
+document.getElementById("l").innerHTML=localStorage.getItem("lname");
+document.getElementById("e").innerHTML=localStorage.getItem("email");
+document.getElementById("p").innerHTML=localStorage.getItem("phone");
+document.getElementById("g").innerHTML=localStorage.getItem("gender");
+document.getElementById("c").innerHTML=localStorage.getItem("country");
+
+</script>
+
+</body>
+</html>

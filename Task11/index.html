@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login</title>
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form id="registration">
+
+        FirstName :
+        <input type="text" id="firstname" placeholder="FirstName" required>
+        <br><br>
+
+        LastName :
+        <input type="text" id="lastname" placeholder="LastName" required>
+        <br><br>
+
+        Email:
+        <input type="email" id="email" placeholder="Email" required>
+        <br><br>
+
+        Password:
+        <input type="password" id="password" placeholder="Password" required>
+        <br><br>
+
+        Confirm Password:
+        <input type="password" id="confirmpassword" placeholder="Confirm Password" required>
+        <br><br>
+
+        PhoneNo:
+        <input type="tel" id="phone" placeholder="Phone Number">
+        <br><br>
+
+        Disability:
+        <select id="disability">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br><br>
+
+        DOB:
+        <input type="date" id="dob">
+        <br><br>
+
+        Address:
+        <br>
+        <textarea id="address" rows="4" cols="30"></textarea>
+        <br><br>
+
+        Country:
+        <select id="country">
+            <option value="">Select Country</option>
+            <option value="America">America</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Canada">Canada</option>
+            <option value="Denmark">Denmark</option>
+            <option value="England">England</option>
+            <option value="France">France</option>
+            <option value="India">India</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Register">
+
+    </form>
+
+    <div id="output"></div>
+
+    <hr>
+
+    <h1>Login Form</h1>
+
+    <form id="loginForm">
+
+        Email:
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <br><br>
+
+        Password:
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <br><br>
+
+        <input type="submit" value="Login">
+
+    </form>
+
+    <div id="loginOutput"></div>
+
+
+    <script>
+
+        document.getElementById("registration").addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const users = JSON.parse(localStorage.getItem("userdata")) || [];
+
+            const firstName = document.getElementById("firstname").value;
+            const lastName = document.getElementById("lastname").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmpassword").value;
+            const phone = document.getElementById("phone").value;
+            const disability = document.getElementById("disability").value;
+            const dob = document.getElementById("dob").value;
+            const address = document.getElementById("address").value;
+            const country = document.getElementById("country").value;
+
+            if (password !== confirmPassword) {
+                alert("Password not matched");
+                return;
+            }
+            const existingUser = users.find(function(user) {
+                return user.email === email;
+            });
+
+            if (existingUser) {
+                alert("Email already registered");
+                return;
+            }
+
+            const data = {
+                firstname: firstName,
+                lastname: lastName,
+                email: email,
+                password: password,
+                phone: phone,
+                disability: disability,
+                dob: dob,
+                address: address,
+                country: country
+            };
+
+            users.push(data);
+
+            localStorage.setItem("userdata",JSON.stringify(users));
+
+            console.log(localStorage.getItem("userdata"));
+            document.getElementById("output").innerHTML =
+                "<h3>Registration Successful</h3>";
+            document.getElementById("registration").reset();
+
+        });
+
+
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            const users = JSON.parse(localStorage.getItem("userdata")) || [];
+
+            const user = users.find(function(user) {
+                return user.email === email &&
+                       user.password === password;
+            });
+
+            if (user) {
+
+                document.getElementById("loginOutput").innerHTML =
+                    "<h3>Login Successful</h3>" +
+                    "<p>Welcome " +user.firstname + " " +user.lastname +"</p>";
+
+            } else {
+
+                document.getElementById("loginOutput").innerHTML =
+                    "<p style='color:red;'>Invalid Email or Password</p>";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

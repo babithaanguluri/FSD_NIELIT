@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <h2>Registration Form</h2>
+
+    {% if error %}
+        <script>
+            alert("{{ error }}");
+        </script>
+    {% endif %}
+
+    {% if success %}
+        <script>
+            alert("{{ success }}");
+        </script>
+    {% endif %}
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.firstname.label_tag }}
+        {{ form.firstname }}
+
+        <br><br>
+
+        {{ form.lastname.label_tag }}
+        {{ form.lastname }}
+
+        <br><br>
+
+        {{ form.email.label_tag }}
+        {{ form.email }}
+
+        <br><br>
+
+        {{ form.password.label_tag }}
+        {{ form.password }}
+
+        <br><br>
+
+        {{ form.confirmpassword.label_tag }}
+        {{ form.confirmpassword }}
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <br>
+
+    <p>
+        If already have account
+        <a href="{% url 'login' %}">Login</a>
+    </p>
+
+</body>
+</html>

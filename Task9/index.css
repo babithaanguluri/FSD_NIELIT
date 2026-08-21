@@ -1,9 +1,71 @@
-body{
-    height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Full background section */
+.hero {
+    min-height: 100vh;
+
+    background-image: url("./assets/success.jpg");
+    background-repeat: no-repeat;
+
+    /* Image complete ga background lo */
+    background-size: cover;
+
+    /* Image right side lo */
+    background-position: center right;
+
     display: flex;
     align-items: center;
-    background-image: url('./assets/success.jpg');
 }
-.h1{
-    text-align: center;
+
+/* Matter */
+.hero-content {
+    width: 45%;
+    margin-left: 8%;
+    margin-right: 5%;
+    z-index: 2;
+}
+
+.small-text {
+    font-size: 10px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #777;
+    margin-bottom: 25px;
+    max-width: 400px;
+}
+
+.read-btn {
+    background-color: #ff5a00;
+    color: white;
+    border: none;
+    padding: 11px 25px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.read-btn:hover {
+    background-color: #e64f00;
 }
